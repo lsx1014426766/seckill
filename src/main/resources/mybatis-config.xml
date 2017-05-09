@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<!-- 注意：每个标签必须按顺序写 -->  
+<configuration>  
+    <!-- 属性配置 -->  
+   <!--  <properties resource="com/mybatis/config/sqlserver-jdbc-connection.properties">  
+        相同属性:最高优先级的属性是那些作为方法参数的，然后是资源/url 属性，最后是 properties元素中指定的属性  
+        <property name="username" value="sa"/>  
+        <property name="password" value="phoenix"/>  
+    </properties>   -->
+      
+    <!-- 设置缓存和延迟加载等等重要的运行时的行为方式 -->  
+    <settings>  
+        <!-- 设置超时时间，它决定驱动等待一个数据库响应的时间  -->  
+        <setting name="defaultStatementTimeout" value="25000"/>  
+        <!-- 这个配置使全局的映射器启用或禁用缓存  -->  
+        <setting name="cacheEnabled" value="true"/>  
+          
+        <!-- 全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载  -->  
+<!--         <setting name="lazyLoadingEnabled" value="true"/> -->  
+        <!-- 当启用时，有延迟加载属性的对象在被调用时将会完全加载任意属性。否则，每种属性将会按需要加载  -->  
+        <!--<setting name="aggressiveLazyLoading" value="true"/>  -->
+          
+        <!-- 允许或不允许多种结果集从一个单独的语句中返回（需要适合的驱动）  -->  
+        <setting name="multipleResultSetsEnabled" value="true"/>  
+        <!-- 使用列标签代替列名。不同的驱动在这方便表现不同。参考驱动文档或充分测试两种方法来决定所使用的驱动  -->  
+        <setting name="useColumnLabel" value="true"/>  
+        <!--获取自增主键值， 允许JDBC支持生成的键。需要适合的驱动。如果设置为true则这个设置强制生成的键被使用，尽管一些驱动拒绝兼容但仍然有效（比如Derby)  -->  
+        <setting name="useGeneratedKeys" value="true"/>  
+        <!-- 开启驼峰命名转换Table(crate_time)-Entity(createTime) mybatis会自动做好对应规范-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 指定MyBatis如何自动映射列到字段/属性。PARTIAL只会自动映射简单，没有嵌套的结果。FULL会自动映射任意复杂的结果（嵌套的或其他情况）  -->
+       <!-- <setting name="autoMappingBehavior" value="PARTIAL"/>  -->
+        <!-- 配置默认的执行器。SIMPLE执行器没有什么特别之处。REUSE执行器重用预处理语句。BATCH执行器重用语句和批量更新  -->  
+       <!-- <setting name="defaultExecutorType" value="SIMPLE"/>-->
+          
+    </settings>  
+      
+ <!--别名   报错找不到-->
+       <!--  <typeAliases>  
+	        <typeAlias alias="Seckill"  type="org.seckill.entity.Seckill"/>  
+	         <typeAlias alias="Successkilled" type="org.seckill.entity.Successkilled"/>  
+        </typeAliases>  -->
+      
+  <!--   <environments default="development">  
+        environment 元素体中包含对事务管理和连接池的环境配置  
+        <environment id="development">  
+            <transactionManager type="JDBC" />  
+            type分三种：  
+                    UNPOOLED是每次被请求时简单打开和关闭连接   
+                    UNPOOLED的数据源仅仅用来配置以下 4 种属性driver，url，username，password  
+                    POOLED ：JDBC连接对象的数据源连接池的实现，不直接支持第三方数据库连接池  
+             
+            <dataSource type="POOLED">  
+                <property name="driver" value="${driver}" />  
+                <property name="url" value="${url}" />  
+                <property name="username" value="${username}" />  
+                <property name="password" value="${password}" />  
+            </dataSource>  
+        </environment>  
+    </environments>   -->
+      
+    <!-- ORM映射文件 -->  
+   <!--  <mappers>  
+        XML  
+        <mapper resource="mapper/SeckillDao.xml" />  
+        <mapper resource="mapper/SuccesskilledDao.xml" />  
+    </mappers>    -->   
+</configuration>

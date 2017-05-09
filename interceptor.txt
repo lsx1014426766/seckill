@@ -1,0 +1,14 @@
+如何访问web-inf下的jsp文件？
+方法1：本来WEB-INF中的jsp就是无法通过地址栏访问的,所以安全
+方法2：<jsp:forward page ="/WEB-INF/jsp/test/test.jsp" />
+方法3：request.getRequestDispatcher("/WEB-INF/a.jsp").forward(request,response);
+怎么样让servlet访问web-inf下的网页或jsp文件呢.因为web-inf下,应用服务器把它指为禁访目录,即直接在浏览器里是不能访问到的.
+因些,可以让servlet进行访问,如web-inf下有a.jsp则可以用request.getRequestDispatcher("/WEB-INF/a.jsp").forward(request,response);进行派遣访问.但如果web-inf下有a.htm,则用request.getRequestDispatcher("/WEB-INF/a.htm").forward(request,response);就不能访问
+
+在配置文件中jsp的文件的前后缀已经有了，在controller中写的时候不必再写
+controller中的servlet的几种实现形式：
+Servlet-->GenericServlet-->HttpServlet 逐个实现关系  抽象类
+GenericServlet类定义了一个通用的，不依赖具体协议的Servlet
+由于大多数网络应用中，都是浏览器通过HTTP协议去访问服务器资源，而通常编写的Servlet也主要是应用于HTTP协议的请求和响应，为了快速开发应用于HTTP协议的Servlet，Sun公司在javax.servlet.http包中给我们提供了一个抽象的类HttpServlet，他继承自GenericServlet类，用于创建适合Web站点的HTTP Servlet。
+
+比如，doPost doGet这些方法，从request解析请求信息开始，将根据http协议的格式进行解析，分发到不同的请求方法处理中，doPost doGet也肯定是被service方法调用的

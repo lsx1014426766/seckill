@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:32 +0800] "GET / HTTP/1.1" 200 57 http-bio-9090-exec-1 889
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:36 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9090-exec-3 3202
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:42 +0800] "GET /seckill/list HTTP/1.1" 200 3305 http-bio-9090-exec-4 1416
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:44 +0800] "GET /seckill/1002/detail HTTP/1.1" 200 3239 http-bio-9090-exec-7 159
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:44 +0800] "GET /resources/script/seckill.js HTTP/1.1" 200 4882 http-bio-9090-exec-8 30
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:44 +0800] "GET /seckill/time/now HTTP/1.1" 200 61 http-bio-9090-exec-9 68
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:52 +0800] "GET /seckill/1003/detail HTTP/1.1" 200 3239 http-bio-9090-exec-10 12
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:52 +0800] "GET /seckill/time/now HTTP/1.1" 200 61 http-bio-9090-exec-10 6
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:52 +0800] "POST /seckill/1003/exposer HTTP/1.1" 200 148 http-bio-9090-exec-10 39
+0:0:0:0:0:0:0:1 - - [10/Aug/2016:18:01:53 +0800] "GET /seckill/1003/5c5d35fe78ecf9a612218caeabd5d265/execution HTTP/1.1" 200 125 http-bio-9090-exec-10 91
